@@ -33,9 +33,19 @@
                     <p class = "price" >100к</p>
                 </article>
             </section>
+            <section>
+                {% for item in items %}
+                    <article>
+                        <img src="{{ item.image }}">
+                        <p class = "name">{{ item.name }}</p>
+                        <p class = "price" >{{ item.price }}</p>
+                    </article>
+                {% endfor %}
+            </section>
         </main>
 
         <footer>
         </footer>
     </body>
 </html>
+
