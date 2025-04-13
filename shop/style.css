@@ -1,0 +1,52 @@
+header{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    height:150px;
+}
+
+header img{
+    border-radius:15px;
+}
+
+nav a{
+    display:block;
+    padding:20px;
+    background-color:blue;
+    color:white;
+    border-radius:15px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    width:500px;
+}
+
+main{
+    align:20px;
+}
+main article{
+    display:flex;
+    flex-direction:column;
+    background-color:gray;
+    border-radius:15px;
+    padding:15px;
+    width:205px;
+}
+
+main img{
+    border-radius:10px;
+}
+
+main section{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+
+}
+
+article{
+    margin:15px;
+    text-align:center;
+}
