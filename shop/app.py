@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask("Магазин сюрпризов",
@@ -21,6 +21,8 @@ price = "Сектор призп")
 
 items.append(item1)
 
+chosen = []
+
 with app.app_context():
     database.create_all()
     existing_items = Item.query.all()
@@ -29,9 +31,19 @@ with app.app_context():
             database.session.add(item)
             database.session.commit()
 
-@app.route("/")
+
+
+@app.route("/", methods=['GET','POST'])
 def index():
+    if request.method == 'POST':
+        chosen_name = request.form.get('chosen_name')
+        chosen.append(chosen_name)
     items = Item.query.all()
     return render_template("index.html", items = items)
+
+@app.route("/cart")
+def cart():
+    cart_list = chosen
+    return render_template("/cart.html", cart_list = cart_list)
 
 app.run()
