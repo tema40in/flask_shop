@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Корзина</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="logo_img.jpg" alt="logo" height="150px">
+            <h1>Корзина</h1>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/cart">Корзина</a>
+            </nav>
+        </header>
+        <ul>
+            {% for item in cart_list %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
