@@ -49,4 +49,19 @@ main section{
 article{
     margin:15px;
     text-align:center;
+    position: relative;
+}
+
+.item_button{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:200px;
+    height:100%;
+    opacity:0;
+}
+
+article:hover{
+    transform:scale(1.2);
+    transition:2s;
 }
