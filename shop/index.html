@@ -11,7 +11,7 @@
             <h1>Магазин сюрпризов</h1>
             <nav>
                 <a href="#">Главная</a>
-                <a href="#">Корзина</a>
+                <a href="/cart">Корзина</a>
             </nav>
         </header>
 
@@ -35,11 +35,17 @@
             </section>
             <section>
                 {% for item in items %}
-                    <article>
-                        <img src="{{ item.image }}">
-                        <p class = "name">{{ item.name }}</p>
-                        <p class = "price" >{{ item.price }}</p>
-                    </article>
+                    <form method='POST'>
+                        <input type='hidden' name = 'chosen_name' value = '{{ item.name }}'>
+                        <input type='hidden' name = 'chosen_price' value = '{{ item.price }}'>
+                        <input type='hidden' name = 'chosen_image' value = '{{ item.image }}'>
+                        <article>
+                            <img src="{{ item.image }}">
+                            <p class = "name">{{ item.name }}</p>
+                            <p class = "price" >{{ item.price }}</p>
+                            <input class='item_button' type='submit' value=''>
+                        </article>
+                    </form>
                 {% endfor %}
             </section>
         </main>
@@ -48,4 +54,3 @@
         </footer>
     </body>
 </html>
-
