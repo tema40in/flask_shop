@@ -8,16 +8,26 @@
     <body>
         <header>
             <img src="logo_img.jpg" alt="logo" height="150px">
-            <h1>Корзина</h1>
+            <h1>Корзина: {{ total }}</h1>
             <nav>
                 <a href="/">Главная</a>
                 <a href="/cart">Корзина</a>
             </nav>
         </header>
-        <ul>
+        <main>
+            <form method='POST'>
+                <input type="submit" value="Отчистить корзину">
+            </form>
+            <section>
             {% for item in cart_list %}
-                <li>{{ item }}</li>
+                <article>
+                    <img src="{{ item[2] }}">
+                    <p class = "name">{{ item[0] }}</p>
+                    <p class = "price" >{{ item[1] }}</p>
+                    <input class='item_button' type='submit' value=''>
+                </article>
             {% endfor %}
-        </ul>
+            </section>
+        </main>
     </body>
 </html>
