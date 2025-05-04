@@ -2,7 +2,16 @@ header{
     display:flex;
     justify-content:space-around;
     align-items: center;
-    height:150px;
+    height:170px;
+    color: white;
+    background-color:black;
+    border-radius: 0px 0px 15px 15px;
+}
+
+
+body{
+    margin:0px;
+    background-color:Gainsboro;
 }
 
 header img{
@@ -15,12 +24,18 @@ nav a{
     background-color:blue;
     color:white;
     border-radius:15px;
+    text-decoration:none;
 }
 
 nav{
     display:flex;
     justify-content:space-around;
     width:500px;
+}
+
+nav a:hover{
+    transition:3s;
+    background-color:MediumBlue;
 }
 
 main{
@@ -64,4 +79,12 @@ article{
 article:hover{
     transform:scale(1.2);
     transition:2s;
+}
+
+.chto-to{
+    display: block;
+    width:150px;
+    height:25px;
+    margin:10px;
+    border-radius:15px;
 }
