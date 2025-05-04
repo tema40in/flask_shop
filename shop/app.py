@@ -28,6 +28,7 @@ items.append(item2)
 chosen = []
 
 with app.app_context():
+    database.drop_all()
     database.create_all()
     existing_items = Item.query.all()
     if not(existing_items):
@@ -59,4 +60,3 @@ def cart():
     return render_template("/cart.html", cart_list = cart_list, total = total)
 
 app.run()
-
